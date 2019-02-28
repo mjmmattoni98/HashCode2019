@@ -5,45 +5,14 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Input {
-    private class Node {
-        String type;
-        int numberOfTags;
-        Set<String> tags;
-
-        Node (String type, int numberOfTags, Set<String> tags) {
-            this.type = type;
-            this.numberOfTags = numberOfTags;
-            this.tags = tags;
-        }
-
-
-        @Override
-        public String toString() {
-            String misTags = "";
-            for (String tag : tags) {
-                misTags += tag + " ";
-            }
-            return type + " " + Integer.toString(numberOfTags) + " " + misTags;
-
-        }
-        /*@Override
-        public boolean equals (Object other) {
-            if (this == other) return true;
-            if (!(other instanceof Node)) return false;
-            //System.out.println("equals de node");
-            Node<T> anotherNode = (Node<T>) other;
-            return data.equals(anotherNode.data);
-        }*/
-    }
-
     private int numberOfPhotos;
     private List<Node> photos;
 
-    public Input(){
-        super();
+    public Input(String fichero){
+        readFile(fichero);
     }
 
-    public void readFile(String fichero){
+    private void readFile(String fichero){
         fichero = "C:\\Users\\javie\\IdeaProjects\\HashCode2019\\src\\main\\java\\hashCode\\" + fichero;
         Scanner inputFile = null;
         try {
