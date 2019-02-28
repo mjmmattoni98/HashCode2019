@@ -1,6 +1,7 @@
 package hashCode;
 
 import java.util.List;
+import java.util.ListIterator;
 
 public class Photos {
     private List<Node> photos;
@@ -14,6 +15,11 @@ public class Photos {
         Input input = new Input(fichero);
         this.photos = input.getPhotos();
         this.numberOfPhotos = input.getNumberOfPhotos();
+    }
+
+    public void organizarVerticales(){
+        ListIterator<Node> iter = photos.listIterator();
+
     }
 
     public String organizarFotos(){
