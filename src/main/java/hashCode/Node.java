@@ -7,6 +7,15 @@ public class Node {
     int numberOfTags;
     Set<String> tags;
     boolean used;
+    int indice;
+
+    Node (String type, int numberOfTags, int indice, Set<String> tags) {
+        this.type = type;
+        this.numberOfTags = numberOfTags;
+        this.tags = tags;
+        this.used = false;
+        this.indice = indice;
+    }
 
     Node (String type, int numberOfTags, Set<String> tags) {
         this.type = type;
@@ -33,7 +42,7 @@ public class Node {
         for (String tag : tags) {
             misTags += tag + " ";
         }
-        return type + " " + numberOfTags + " " + misTags;
+        return indice + " " + type + " " + numberOfTags + " " + misTags;
 
     }
 }

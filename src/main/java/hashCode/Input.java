@@ -27,14 +27,16 @@ public class Input {
         }
 
         photos = new ArrayList<Node>();
+        int i = 0;
         while (inputFile.hasNextLine()){
             String[] line = inputFile.nextLine().split(" ");
             String type = line[0];
             int numberOfTags = Integer.parseInt(line[1]);
             Set<String> tags = new HashSet<String>();
-            for (int i = 2; i < line.length; i++)
-                tags.add(line[i]);
-            photos.add(new Node(type, numberOfTags, tags));
+            for (int j = 2; j < line.length; j++)
+                tags.add(line[j]);
+            photos.add(new Node(type, numberOfTags, i, tags));
+            i++;
         }
         inputFile.close();
     }
